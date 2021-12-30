@@ -1,1 +1,1 @@
-exports.customer = require("./customer.controller")
+exports.user = require("./user.controller")

@@ -7,6 +7,7 @@ const payloadValidationMiddleware = require("../middleware/common/payloadValidat
 
 
 
-router.post('/registration',[payloadValidationMiddleware(Schema.user.registration)],Controller.customer.registration)
+router.get('/',Controller.user.getAllUser)
+router.post('/registration',[payloadValidationMiddleware(Schema.user.registration)],Controller.user.registration)
 
 module.exports = router

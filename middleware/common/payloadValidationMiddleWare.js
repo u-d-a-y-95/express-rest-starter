@@ -3,7 +3,6 @@
 const payloadValidationMiddleware = (schema) =>{
     
     return (req,res,next) =>{
-        console.log("Middleware")
         result =schema.validate(req.body,{abortEarly:false,allowUnknown:true})
         if(result?.error){
             next({

@@ -1,5 +1,1 @@
-const customerService = require("./customer.service")
-
-
-
-exports.customer=customerService
+exports.user=require("./user.service")

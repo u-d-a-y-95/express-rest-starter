@@ -1,0 +1,1 @@
+exports.APP_SALT_ROUND = 10
