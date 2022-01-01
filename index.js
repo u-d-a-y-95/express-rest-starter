@@ -6,10 +6,15 @@ const dotenv = require("dotenv").config()
 const database = require("./config/dbConfig")
 const routes = require('./routes')
 const {defaultErrorMiddleWare} = require("./middleware/common/defaultErrorMiddleWare")
+const { urlencoded } = require("express")
+
+
+
 const app = express()
 
 // common middleware for payload parsing
 app.use(express.json())
+app.use(urlencoded({extended:false}))
 
 // middleware for router 
 app.use('/api', routes)

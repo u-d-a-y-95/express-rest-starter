@@ -5,3 +5,8 @@ exports.registration = joi.object({
     email:joi.string().email().required("Email is required"),
     password:joi.string().required("password is required"),
 })
+
+exports.login = joi.object({
+    email:joi.string().email().required("Email is required"),
+    password:joi.string().required("password is required"),
+})

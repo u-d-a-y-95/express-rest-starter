@@ -2,6 +2,23 @@ const database = require("../config/dbConfig")
 
 
 
+
+
+
+exports.getUserByEmail = (user) => {
+    const query = `select * from users where email = ?;`
+
+    return new Promise((resolve, reject) => {
+        database.db.all(query, [user?.email], (err, res) => {
+            if (err) {
+                reject(err)
+            }
+            resolve(res)
+        })
+    })
+
+}
+
 exports.createUser = (user) => {
     const query = `Insert into users (name,email,password,status) values(?,?,?,?);`
 
@@ -10,7 +27,6 @@ exports.createUser = (user) => {
             if (err) {
                 reject(err)
             }
-            console.log(res)
             resolve(res)
         })
     })
