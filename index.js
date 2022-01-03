@@ -5,7 +5,7 @@ const dotenv = require("dotenv").config()
 // 
 const database = require("./config/dbConfig")
 const routes = require('./routes')
-const {defaultErrorMiddleWare} = require("./middleware/common/defaultErrorMiddleWare")
+const {pageNotFoundErrorMiddleWare,defaultErrorMiddleWare} = require("./middleware/common/errorMiddleWare")
 const { urlencoded } = require("express")
 
 
@@ -24,6 +24,11 @@ app.get("/",(req,res)=>{
 })
 
 
+// 404 page
+app.use(pageNotFoundErrorMiddleWare)
+
+
+// default error
 app.use(defaultErrorMiddleWare)
 
 
